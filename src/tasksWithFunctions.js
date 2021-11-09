@@ -25,7 +25,10 @@ export function valueByKeyInObject(key, obj = {}) {
 // without object - { name: 'Name' }
 // with an object - { name: 'Name', age: 100 }
 export function extendObject(key, value, obj = {}) {
-  return key;
+  const objNew = Object.assign({}, obj);
+  objNew[key] = value;
+
+  return objNew;
 }
 // Task 6 - should return a larger argument increased by 100
 // with (10, 7) output - 110
